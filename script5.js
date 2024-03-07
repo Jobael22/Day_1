@@ -1,16 +1,17 @@
-function unc(str, separator) {
-    
-    if(typeof(separator) == "undefined") {
-      separator = " ";
-    }
-    
-    let str1 = str.replace(/[A-Z]/g, function (letter) 
-    {
-      return separator + letter.toLowerCase();
-    });
- 
-    return str1.replace("/^" + separator + "/", '');
-  }
-  console.log(unc('helloWorld'));
-  console.log(unc('helloWorld','-'));
-  console.log(unc('helloWorld','_'));
+const uncamelize = (word, chart = " ") => {
+	const loweWord = word.toLowerCase();
+	let str = "";
+	for (let i = 0; i < word.length; i++) {
+	if (word[i] !== loweWord[i]) {
+	str += chart + loweWord[i];
+	} else {
+	str += word[i];
+	}
+	}
+	return str;
+	};
+	
+	
+	console.log(uncamelize("helloWorld"));
+	console.log(uncamelize("helloWorld", "-"));
+	console.log(uncamelize("helloWorld", "_"));
