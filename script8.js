@@ -141,4 +141,4 @@ for(let i = 1; i<= n-1; i++){
   }
   string += "\n";
 }
-console.log(string);
+console.log(string);   //hollow diamond pettern
